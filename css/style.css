@@ -52,6 +52,12 @@ h1 {
     font-style: italic;
 }
 
+.bg-aqua {
+    background-color: var(--aqua);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
 /* header */
 header {
     padding: 50px 0;
@@ -69,6 +75,11 @@ header {
 .description {
     display: flex;
     justify-content: space-between;
+}
+
+.des-writing {
+    color: white;
+    font-size: 30px;
 }
 
 .des-writing,
@@ -98,7 +109,7 @@ header {
 main {
     border-top: 3px solid #4d4d4d;
     border-bottom: 3px solid #4d4d4d;
-    padding: 40px 0 100px 0;
+    padding: 40px 0 70px 0;
 }
 
 .menu {
@@ -213,4 +224,30 @@ main {
     min-width: 50px;
     min-height: 50px;
     text-align: center;
+}
+
+/* footer
+ */
+.infor {
+    padding: 40px 0 150px 0;
+    align-items: center;
+}
+
+.infor p {
+    color: white;
+    font-size: 19px;
+}
+
+.infor .des-writing {
+    font-size: 30px;
+}
+
+.creater {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.twitter p {
+    font-weight: 600;
 }
