@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-    color: var(--pink);
+    color: var(--pink) !important;
 }
 
 li {
@@ -91,4 +91,37 @@ header {
 
 .header-title h1 {
     margin: 25px 0 10px 0;
+}
+
+/* menu */
+main {
+    border-top: 3px solid #4d4d4d;
+    padding-top: 30px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    color: var(--grey);
+    font-size: 27px;
+    font-style: italic;
+}
+
+.menu .menu-list {
+    display: flex;
+    gap: 30px;
+}
+
+
+.menu .filter {
+    margin-right: 50px;
+    gap: 15px;
+    display: flex;
+}
+
+.menu-list li:last-child a {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
 }
