@@ -3,6 +3,7 @@
     --pink: #ff7575;
     --aqua: #4699e0;
     --grey: #909099;
+    --text-color: #0F1217;
 }
 
 * {
@@ -34,8 +35,8 @@ body {
     margin: 0 auto;
 }
 
-.border {
-    border-radius: 10px;
+.border-rdu {
+    border-radius: 22px;
 }
 
 .list a {
@@ -96,7 +97,8 @@ header {
 /* menu */
 main {
     border-top: 3px solid #4d4d4d;
-    padding-top: 30px;
+    border-bottom: 3px solid #4d4d4d;
+    padding: 40px 0 200px 0;
 }
 
 .menu {
@@ -107,6 +109,7 @@ main {
     color: var(--grey);
     font-size: 27px;
     font-style: italic;
+    font-family: "Recursive";
 }
 
 .menu .menu-list {
@@ -124,4 +127,43 @@ main {
 .menu-list li:last-child a {
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
     -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+}
+
+.content .main {
+    margin-top: 100px;
+}
+
+.grid-blog {
+    background-color: white;
+    padding: 25px;
+    color: var(--text-color);
+    display: grid;
+    gap: 20px;
+    grid-template-rows: auto 1fr auto;
+}
+
+.grid-blog h2 {
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.grid-blog p {
+    font-size: 16px;
+}
+
+.grid-blog img {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.grid-blog .times span {
+    margin: 0 30px;
+    font-size: 30px;
 }
