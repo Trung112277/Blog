@@ -14,7 +14,7 @@
 
 a {
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 a:hover {
@@ -63,81 +63,107 @@ header {
     padding: 50px 0;
 }
 
-.writing * {
+.header * {
     color: white;
 
 }
 
-.writing p {
+.header p {
     font-size: 30px;
 }
 
-.description {
+.menu-box {
     display: flex;
     justify-content: space-between;
 }
 
-.des-writing {
+.logo {
     color: white;
     font-size: 30px;
 }
 
-.des-writing,
-.des-menu {
+.logo,
+.menu {
     width: fit-content;
 }
 
-.des-menu {
+.menu {
     display: flex;
     gap: 30px;
 }
 
-.des-menu a {
+.menu a {
     font-size: 25px;
 }
 
-.header-title {
+.title {
     text-align: center;
-    margin-top: 100px;
+    padding: 100px 0;
 }
 
-.header-title h1 {
+.title p {
+    color: white;
+    font-size: 29px;
+}
+
+.title h1 {
     margin: 25px 0 10px 0;
 }
 
 /* menu */
 main {
-    border-top: 3px solid #4d4d4d;
     border-bottom: 3px solid #4d4d4d;
     padding: 40px 0 70px 0;
 }
 
-.menu {
+.categories {
     display: flex;
+    gap: 45px;
+    overflow: hidden;
+    position: relative;
 }
 
-.menu a {
+.categories::before {
+    content: "";
+    z-index: 1;
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    background: linear-gradient(to right, rgb(35 40 48 / 0%), rgb(35 40 48));
+}
+
+.categories a {
     color: var(--grey);
     font-size: 27px;
     font-style: italic;
     font-family: "Recursive";
 }
 
-.menu .menu-list {
+.categories .categories-list {
     display: flex;
-    gap: 30px;
+    gap: 35px;
+}
+
+.categories nav {
+    max-width: 100%;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.categories nav::-webkit-scrollbar {
+    display: none;
 }
 
 
-.menu .filter {
-    margin-right: 50px;
+.categories .filter {
     gap: 15px;
     display: flex;
 }
 
-.menu-list li:last-child a {
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+.content {
+    border-top: 3px solid #4d4d4d;
+    padding-top: 20px;
 }
 
 .content .main {
@@ -176,7 +202,7 @@ main {
 
 .grid-blog .times span {
     margin: 0 30px;
-    font-size: 30px;
+    font-weight: 900;
 }
 
 .list {
@@ -193,36 +219,55 @@ main {
 .list a {
     font-size: 25px;
     font-style: italic;
+    cursor: pointer;
 }
 
 .active {
     position: relative;
-
-}
-
-.active a {
     color: var(--pink) !important;
 }
 
 .active::after {
     content: "";
     position: absolute;
-    top: -15px;
+    top: -20px;
     width: 100%;
     height: 3px;
     background-color: var(--pink);
-    right: 50%;
+    right: 45%;
     transform: translateX(50%);
 }
 
-.list .number {
-    width: 50px;
-    height: 50px;
+.pagination {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 100px;
 }
 
-.list li {
-    min-width: 50px;
-    min-height: 50px;
+.pagination>* {
+    color: var(--grey);
+    font-style: italic;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "Recursive";
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination button:hover,
+.pagination span:hover {
+    color: var(--pink);
+}
+
+.pagination .page-numbers {
+    display: flex;
+    gap: 20px;
+}
+
+.page-numbers span {
+    width: 54px;
     text-align: center;
 }
 
