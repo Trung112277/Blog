@@ -35,19 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
 // pagination blogs
 document.addEventListener('DOMContentLoaded', function () {
     const blogs = document.querySelectorAll('.grid-blog');
-    const gridContainer = document.querySelector('.main');
+    const gridContainer = document.querySelector('.grid-container');
     const pageNumbers = document.querySelector('.page-numbers');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
+    const meshButton = document.querySelector('.mesh');
+    const rowButton = document.querySelector('.row');
     const blogsPerPage = 9;
     let currentPage = 1;
 
+    // Hiển thị blog theo trang
     function showBlogs(page) {
         const start = (page - 1) * blogsPerPage;
         const end = start + blogsPerPage;
 
-        blogs.forEach((blog, index) => {
-            if (index >= start && index < end) {
+        blogs.forEach((blog, i) => {
+            if (i >= start && i < end) {
                 blog.style.display = 'grid';
             } else {
                 blog.style.display = 'none';
@@ -55,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Cập nhật phân trang
     function updatePagination() {
         const totalPages = Math.ceil(blogs.length / blogsPerPage);
         pageNumbers.innerHTML = '';
@@ -78,6 +82,17 @@ document.addEventListener('DOMContentLoaded', function () {
         nextButton.disabled = currentPage === totalPages;
     }
 
+    // Chuyển đổi chế độ hiển thị lưới
+    meshButton.addEventListener('click', () => {
+        gridContainer.classList.remove('row-layout');
+    });
+
+    // Chuyển đổi chế độ hiển thị hàng ngang
+    rowButton.addEventListener('click', () => {
+        gridContainer.classList.add('row-layout');
+    });
+
+    // Sự kiện nút Previous
     prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
@@ -86,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Sự kiện nút Next
     nextButton.addEventListener('click', () => {
         const totalPages = Math.ceil(blogs.length / blogsPerPage);
         if (currentPage < totalPages) {
@@ -95,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Hiển thị blog đầu tiên khi trang được tải
     showBlogs(currentPage);
     updatePagination();
 });

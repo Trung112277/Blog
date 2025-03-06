@@ -110,6 +110,13 @@ header {
     margin: 25px 0 10px 0;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 /* menu */
 main {
     border-bottom: 3px solid #4d4d4d;
@@ -133,11 +140,16 @@ main {
     background: linear-gradient(to right, rgb(35 40 48 / 0%), rgb(35 40 48));
 }
 
-.categories a {
+.categories a,
+.categories button {
     color: var(--grey);
     font-size: 27px;
     font-style: italic;
     font-family: "Recursive";
+}
+
+.categories button:hover {
+    color: var(--pink);
 }
 
 .categories .categories-list {
@@ -295,4 +307,27 @@ main {
 
 .twitter p {
     font-weight: 600;
+}
+
+.grid-container.row-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid-container.row-layout .grid-blog {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+}
+
+.grid-container.row-layout .grid-blog img {
+    width: 100%; 
+    height: auto;
+}
+
+.grid-container.row-layout .grid-blog .blog-text {
+    flex: 1;
 }
