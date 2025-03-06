@@ -85,11 +85,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Chuyển đổi chế độ hiển thị lưới
     meshButton.addEventListener('click', () => {
         gridContainer.classList.remove('row-layout');
+
     });
 
     // Chuyển đổi chế độ hiển thị hàng ngang
     rowButton.addEventListener('click', () => {
         gridContainer.classList.add('row-layout');
+
     });
 
     // Sự kiện nút Previous
